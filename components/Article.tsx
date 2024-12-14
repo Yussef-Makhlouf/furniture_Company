@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 
 const Article = () => {
   return (
@@ -41,13 +41,13 @@ const Article = () => {
           </div>
           <div className="mt-10 lg:mt-0">
             <div className="aspect-w-5 aspect-h-3 rounded-lg overflow-hidden sm:aspect-w-16 sm:aspect-h-9">
-              <Image
+              {/* <Image
                 src="/moving-team-arabic.jpg"
                 alt="فريق النقل المحترف لدينا"
                 layout="fill"
                 objectFit="cover"
                 className="w-full h-full object-center object-cover"
-              />
+              /> */}
             </div>
           </div>
         </div>
