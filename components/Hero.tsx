@@ -1,47 +1,63 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import Image from 'next/image'
 
 const Hero = () => {
   return (
-    <div className="relative bg-emerald-600 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-right">
-              <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">النقل الحديث</span>{' '}
-                <span className="block text-emerald-200 xl:inline">بسهولة تامة</span>
-              </h1>
-              <p className="mt-3 text-base text-emerald-100 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                استمتع بتجربة نقل خالية من التوتر مع خدماتنا المهنية والموثوقة. نحن نتعامل مع كل شيء من التعبئة إلى النقل، مما يضمن وصول ممتلكاتك بأمان إلى وجهتك الجديدة.
-              </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <Link href="#contact" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-emerald-600 bg-white hover:bg-emerald-50 md:py-4 md:text-lg md:px-10">
-                    احصل على عرض سعر مجاني
-                  </Link>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:mr-3">
-                  <Link href="#services" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-400 md:py-4 md:text-lg md:px-10">
-                    خدماتنا
-                    <ArrowLeft className="mr-2 h-5 w-5" />
-                  </Link>
-                </div>
-              </div>
+    <div className="relative min-h-screen bg-gradient-to-br from-blue-900 to-blue-800">
+      <div className="absolute inset-0 bg-black/20 z-10"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen py-20">
+          <div className="w-full lg:w-1/2 text-center lg:text-right space-y-8">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              <span className="block">النقل الحديث</span>
+              <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-white">
+                بسهولة تامة
+              </span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-blue-50/90 max-w-2xl mx-auto lg:mx-0">
+              استمتع بتجربة نقل خالية من التوتر مع خدماتنا المهنية والموثوقة. نحن نتعامل مع كل شيء من التعبئة إلى النقل، مما يضمن وصول ممتلكاتك بأمان إلى وجهتك الجديدة.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link 
+                href="tel:0565265233" 
+                className="group relative px-8 py-4 bg-white rounded-full text-blue-900 font-bold hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl"
+              >
+                احصل على عرض سعر مجاني
+                <span className="absolute inset-0 rounded-full bg-white/20 animate-pulse group-hover:animate-none"></span>
+              </Link>
+              
+              <Link 
+                href="#services" 
+                className="flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 rounded-full text-white font-bold hover:bg-blue-500 transition-all duration-300"
+              >
+                خدماتنا
+                <ArrowLeft className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
-          </main>
+          </div>
+
+          <div className="w-full lg:w-1/2 mt-12 lg:mt-0">
+            <div className="relative h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+              <Image
+                src="/02.avif"
+                alt="خدمة النقل الحديثة"
+                fill
+                className="object-cover bg-white"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
-        <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="/hero-image-arabic.jpg"
-          alt="خدمة النقل الحديثة"
-        />
-      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
     </div>
   )
 }
 
 export default Hero
-
